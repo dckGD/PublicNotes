@@ -1,0 +1,3 @@
+Livello dell’architettura di un [[DBMS|DBMS]] che descrive **la struttura logica dei dati e le operazioni su di essi**, indipendentemente dalla loro memorizzazione fisica. Include schemi logici come tabelle, attributi, relazioni, vincoli di integrità e viste concettuali del database. Fornisce un’astrazione che consente agli utenti e alle applicazioni di interagire con i dati senza conoscere i dettagli di archiviazione.
+
+---

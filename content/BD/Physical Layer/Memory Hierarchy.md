@@ -1,0 +1,4 @@
+La [[BD/Physical Layer/Memory Hierarchy|gerarchia della memoria]] descrive l’organizzazione dei diversi livelli di memoria utilizzati per memorizzare e gestire i dati, ordinati in base a **velocità di accesso, costo e capacità**. Ai livelli più alti si trovano memorie molto veloci ma costose e di dimensioni ridotte (come cache e memoria principale), mentre ai livelli più bassi ci sono memorie più lente ma economiche e capienti (come dischi e archiviazione secondaria).  
+Un [[DBMS|DBMS]] sfrutta questa gerarchia per **ottimizzare le prestazioni**, mantenendo in memoria veloce i dati più frequentemente usati e delegando allo storage persistente la conservazione a lungo termine, garantendo al tempo stesso **efficienza, affidabilità e persistenza dei dati**.
+
+---

@@ -1,0 +1,3 @@
+L'**overhead** si riferisce all'**extra carico** o **risorse aggiuntive** necessarie per gestire qualcosa, come una struttura di dati o un oggetto. In altre parole, è l'**"extra" di memoria o tempo che viene speso per gestire** il dato stesso. Nel contesto della memoria e degli oggetti in Java: Quando crei un oggetto, non solo memorizzi i dati dell'oggetto stesso, ma anche altre informazioni come i **metadati** (ad esempio, la classe di appartenenza dell'oggetto, il puntatore alla sua posizione in memoria, ecc.). Questo comporta un "overhead" rispetto ai **tipi primitivi**, che non hanno questi metadati aggiuntivi e sono memorizzati direttamente.
+
+---

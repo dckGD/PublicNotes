@@ -1,0 +1,4 @@
+Le **collisioni** sono un fenomeno **logico** dovuto alla funzione di hashing, e quindi appartenente ai file [[Random File|hash]]. Si verificano quando **chiavi diverse producono lo stesso valore hash**, indipendentemente dalla capacità del bucket. Le collisioni sono **inevitabili** perché lo spazio delle chiavi è molto più grande dello spazio degli indirizzi hash, tuttavia una collisione **non implica necessariamente [[Overflow|overflow]]**: se il bucket ha spazio disponibile, i record possono coesistere. Una buona funzione di hashing mira a **ridurre la probabilità di collisione**, distribuendo uniformemente le chiavi in quanto, le collisioni, determinando il **numero di record per bucket**, influenzando i costi di ricerca. Due record che coesistono in un bucket sono detti **synonyms**.
+
+---
+

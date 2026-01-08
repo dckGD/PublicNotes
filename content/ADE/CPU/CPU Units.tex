@@ -1,0 +1,149 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+In un'architettura \textbf{RISC-V}, la \textbf{CPU} è composta da
+diverse \textbf{unità funzionali} che collaborano per eseguire
+istruzioni. Ecco una panoramica delle principali unità:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 0\tabcolsep) * \real{0.0556}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#\#\# \textbf{CU (Control Unit)}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\#\#\# \textbf{ALU (Arithmetic Logic Unit)} \\
+📌 \textbf{Ruolo:} Esegue operazioni aritmetiche e logiche. 🔹
+Addizione, sottrazione (\texttt{add}, \texttt{sub}) 🔹 Operazioni
+logiche (\texttt{and}, \texttt{or}, \texttt{xor}) 🔹 Shift e rotazioni
+(\texttt{sll}, \texttt{srl}, \texttt{sra}) 🔹 Confronti (\texttt{slt},
+\texttt{sltu}) \^{}08fb26 \\
+\end{longtable}
+
+\subsubsection{\texorpdfstring{\textbf{FPU (Floating Point
+Unit)}}{FPU (Floating Point Unit)}}\label{fpu-floating-point-unit}
+
+📌 \textbf{Ruolo:} Esegue operazioni su numeri in virgola mobile.\\
+🔹 Somma, sottrazione, moltiplicazione, divisione (\texttt{fadd.s},
+\texttt{fmul.s}).\\
+🔹 Conversioni tra interi e float (\texttt{fcvt.s.w}).\\
+🔹 Comparazioni (\texttt{flt.s}, \texttt{feq.s}). \^{}3c2941
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 0\tabcolsep) * \real{0.0556}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#\#\# \textbf{IFU (Instruction Fetch Unit)}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\#\#\# \textbf{IDU (Instruction Decode Unit)} \\
+📌 \textbf{Ruolo:} Interpreta l'istruzione e attiva le unità necessarie.
+🔹 Identifica il tipo di istruzione (aritmetica, memoria, branch, FPU).
+🔹 Controlla quali registri sono coinvolti. 🔹 Imposta segnali per la
+\textbf{ALU, FPU, Load/Store Unit}. \^{}f06d0e \\
+\end{longtable}
+
+\subsubsection{\texorpdfstring{\textbf{LSU (Load/Store
+Unit)}}{LSU (Load/Store Unit)}}\label{lsu-loadstore-unit}
+
+📌 \textbf{Ruolo:} Gestisce il trasferimento di dati tra registri e
+memoria.\\
+🔹 Caricamento dati (\texttt{lw}, \texttt{lb}, \texttt{ld}).\\
+🔹 Memorizzazione dati (\texttt{sw}, \texttt{sb}, \texttt{sd}).\\
+🔹 Accesso alla memoria cache. \^{}9f277d
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 0\tabcolsep) * \real{0.0556}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#\#\# \textbf{BU (Branch Unit)}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\#\#\# \textbf{CSRU (Control and Status Registers Unit)} \\
+📌 \textbf{Ruolo:} Gestisce registri speciali della CPU. 🔹 Controlla
+eccezioni e interrupt (\texttt{mstatus}, \texttt{mepc}). 🔹 Gestisce la
+modalità privilegiata (\texttt{mcause}, \texttt{mie}). 🔹 Abilita la FPU
+e altre estensioni (\texttt{misa}). \\
+\end{longtable}
+
+\subsubsection{**MMU (Memory Management
+Unit)}\label{mmu-memory-management-unit}
+
+📌 \textbf{Ruolo:} Controlla l'accesso alla memoria principale e
+virtuale.\\
+🔹 Gestisce la \textbf{memoria virtuale} e la traduzione degli indirizzi
+virtuali in fisici. 🔹 Controlla i permessi di accesso alla memoria.
+\^{}1851aa
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\end{document}

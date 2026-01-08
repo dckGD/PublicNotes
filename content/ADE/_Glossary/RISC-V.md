@@ -1,0 +1,3 @@
+**RISC-V** (pronunciato "risk-five") è un'architettura di set di istruzioni ([[ISA]], **Instruction Set Architecture**) **open-source** e **[[Exstensions|modulare]]**, che definisce il modo in cui i processori (CPU) eseguono le istruzioni e accedono alla memoria. È un'architettura **RISC** (Reduced Instruction Set Computer), che significa che si concentra sull'utilizzo di un set di istruzioni semplice ed efficiente. 
+
+---
