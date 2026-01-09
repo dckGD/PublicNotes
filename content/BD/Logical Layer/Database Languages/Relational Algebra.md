@@ -10,8 +10,7 @@ L’**algebra relazionale** è un **linguaggio [[Formal Language#LINGUAGGIO PROC
 
 ---
 
-Gli **operandi** sono le **relazioni** (tabelle) di partenza o il risultato di altre operazioni.  
-Ogni operazione produce **una nuova relazione** ([[Functional Dependencies#CHIUSURA SEMANTICA|chiusura]] relazionale). Ogni relazione risultato deve mantenere l'**[[Database#Integrità (integrity)|integrità]]** propria dei database relazionali (ad esempio non deve contenere duplicati).
+Gli **operandi** sono le **relazioni** (tabelle) di partenza o il risultato di altre operazioni. Ogni operazione produce **una nuova relazione** ([[Functional Dependencies#CHIUSURA SEMANTICA|chiusura]] relazionale). Ogni relazione risultato deve mantenere l'**[[Database#Integrità (integrity)|integrità]]** propria dei database relazionali (ad esempio non deve contenere duplicati).
 
 ---
 ### OPERATORI:
@@ -58,10 +57,11 @@ Oppure:
 ![[selection 1.png]]
 
 ---
-#### UNIONE(∪)
+#### UNIONE (∪)
 
 Unisce tutti i dati di due relazioni.
-> N.B. gli operandi devono essere **union compatibili** (ovvero che hanno lo stesso [[Relational Model#Schema|schema]]).  
+
+> N.B. Gli operandi devono essere **union compatibili** (ovvero che hanno lo stesso [[Relational Model#Schema|schema]]).  
 
 **Sintassi:** 
 
@@ -77,7 +77,8 @@ Unisce tutti i dati di due relazioni.
 #### DIFFERENZA (−)
 
 Restituisce le tuple presenti in una relazione ma non nell’altra.  
-> N.B. gli operandi devono essere **union compatibili** (ovvero che hanno lo stesso [[Relational Model#Schema|schema]]).  
+
+> N.B. Gli operandi devono essere **union compatibili** (ovvero che hanno lo stesso [[Relational Model#Schema|schema]]).  
 
 **Sintassi:** 
 
@@ -99,7 +100,8 @@ Oppure:
 #### INTERSEZIONE (∩)
 
 Restituisce le tuple presenti in entrambe le relazioni.  
-> N.B. gli operandi devono essere **union compatibili** (ovvero che hanno lo stesso [[Relational Model#Schema|schema]]).  
+
+> N.B. Gli operandi devono essere **union compatibili** (ovvero che hanno lo stesso [[Relational Model#Schema|schema]]).  
 
 **Sintassi:** 
 
@@ -129,7 +131,7 @@ Combina ogni tupla di R con ogni tupla di S.
 → base per costruire le **join**.
 
 ---
-#### JOIN NATURALE (⨝)
+#### INNER JOIN (⨝)
 
 Combina tuple di due relazioni in base a una condizione di uguaglianza. 
 
@@ -140,11 +142,14 @@ Combina tuple di due relazioni in base a una condizione di uguaglianza.
 **Esempio:**  
 
 <b>Studenti ⨝<sub>Studenti.Matricola=Esami.Matricola</sub>Esami</b>
-> Che equivale a scrivere: <b>σ<sub>Studenti.Matricola=Esami.Matricola</sub>(Studenti×Esami)</b>
+
+> N.B. Che equivale a scrivere: <b>σ<sub>Studenti.Matricola=Esami.Matricola</sub>(Studenti×Esami)</b>
 
 ![[natural join.png]]
 
 → unisce studenti e esami corrispondenti.
+
+> N.B In questo caso il join si basa sull'attributo **Matricola**, presente con lo stesso nome sia in **Studenti** che in **Esami**, e possiamo quindi omettere la condizione **Studenti.Matricola = Esami.Matricola**, applicando direttamente quello che viene chiamato **natural join** (un sottoinsieme dell'inner join): **Studenti ⨝ Esami**.
 
 ---
 #### RIDENOMINAZIONE (ρ)

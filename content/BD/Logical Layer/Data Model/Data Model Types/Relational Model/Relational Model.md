@@ -135,7 +135,7 @@ In **Esami(Studente, Voto, Corso)** → **grado = 3**.
 ---
 #### Valori e NULL
 
-Ogni **valore** è un elemento effettivo di una tupla, preso dal **dominio** dell’attributo (cioè l’insieme dei valori ammessi). Una relazione non può presentare campi vuoti, quindi, in assenza di darti, si utilizza il valore polimorfo **NULL**..
+Ogni **valore** è un elemento effettivo di una tupla, preso dal **dominio** dell’attributo (cioè l’insieme dei valori ammessi). Una relazione non può presentare campi vuoti, quindi, in assenza di dati, si utilizza il valore polimorfo **NULL**..
 
 **Esempio:**
 ![[relation value.png]]

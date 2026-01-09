@@ -5,14 +5,12 @@ Le **dipendenze funzionali** descrivono **relazioni logiche tra attributi** di u
 
 Una **dipendenza funzionale** tra due insiemi di attributi **X → Y** significa che:
 
-> in ogni istanza valida della relazione, a ogni valore di **X** corrisponde **uno e un solo valore** di **Y**.
+> In ogni istanza valida della relazione, a ogni valore di **X** corrisponde **uno e un solo valore** di **Y**.
 
 In altre parole, **X determina Y**.  
 Se due tuple hanno lo stesso valore per **X**, devono avere anche lo stesso valore per **Y**.
 
-una **relazione** (cioè una tabella) **soddisfa una dipendenza funzionale** X → Y quando, in ogni suo stato possibile, **non esistono due tuple (righe)** che abbiano **lo stesso valore negli attributi di X** ma **valori diversi negli attributi di Y**.
-
-Deve quindi soddisfare:
+Una **relazione** (cioè una tabella) **soddisfa una dipendenza funzionale** X → Y quando, in ogni suo stato possibile, **non esistono due tuple (righe)** che abbiano **lo stesso valore negli attributi di X** ma **valori diversi negli attributi di Y**. Deve quindi soddisfare:
 
 ---
 #### Applicabilità:
@@ -376,7 +374,7 @@ Allora:
 
 $$X \to Y \in F^A \iff Y \subseteq X^+$$
 
-cioè:
+Cioè:
 
 > “**X** determina **Y**” se e solo se tutti gli attributi di **Y** appartengono alla chiusura <b>X<sup>+</sup></b> di **X**" (dopotutto <b>X<sup>+</sup></b> è proprio l'insieme degli attributi determinati da **X**).
 
@@ -663,8 +661,7 @@ Dati uno **schema di relazione R** e un **insieme di dipendenze funzionali F**, 
 
 $$K \to R \in F^+$$
 
-Significa che **K determina tutti gli attributi di R**, cioè conoscendo i valori di K posso ricostruire l’intera tupla.  
-- **K** è **[[Relational Model#Superchiave|superchiave]]**.
+Significa che **K determina tutti gli attributi di R**, cioè conoscendo i valori di K posso ricostruire l’intera tupla. **K** è **[[Relational Model#Superchiave|superchiave]]**.
 
 ---
 
@@ -675,6 +672,7 @@ Non esiste un **sottoinsieme proprio K'** di **K** tale che:
 $$K' \to R \in F^+$$
 
 Significa che **nessun attributo di K è ridondante**.  
+
 - Se togli anche solo un attributo, K non determina più tutto R.  
 - In questo caso, K è **[[Relational Model#Chiave candidata|chiave candidata]]** (cioè una superchiave minimale).
 - Tutte le superchiavi singleton (che contengono esattamente un elemento) sono minimali.
